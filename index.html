@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Orbit</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    </head>
+
+    <style>
+        body { 
+            display: grid;
+            grid-template-areas: 
+                "canvas settings";
+            grid-template-rows: calc(702px + 4mm);
+            grid-template-columns: 702px 1fr;
+            grid-gap: 2mm;
+            height: 100vh;
+            margin: 0;
+            }
+        #Canvas {
+            grid-area: canvas;
+        }
+
+        #pageSettings {
+            grid-area: settings;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        input.slider {
+            height: 2mm;
+        }
+
+        #SliderLabel {
+            margin: 0 0 0 1cm
+        }
+
+        td {
+            padding: 2mm;
+        }
+    </style>
+    <body>
+        <canvas id="Canvas" style="border: 1px solid black; border-radius: 4mm; margin: 2mm" width="700px" height="700px">Your browser doesn't support canvas tags. :(</canvas>
+        
+        <div id=pageSettings style="border: 1px solid black; border-radius: 4mm; margin: 2mm; overflow-y: scroll;">
+            <div style="margin: 2mm">
+                <button id="PlayPause">▷</button>
+                <button id="Regen">Generate new</button>
+                <label id="SliderLabel">Scale: </label>
+                <input type="range" id="Scale" min="0.1" max="2" value="0.4" step="0.0001" class="slider">
+                <label id="ScaleValue">0.4000</label>
+                <label id="SliderLabel">Speed: </label>
+                <input type="range" id="Speed" min="0.01" max="5" value="0.3" step="0.01" class="slider">
+                <label id="SpeedValue">0.30</label>
+                <label id="SliderLabel">Tail Length: </label>
+                <input type="range" id="TailLength" min="1" max="500" value="300" step="1" class="slider">
+                <label id="TailLengthValue">300</label>
+                <label id="SliderLabel">Frame Rate: </label>
+                <label id="FrameRateValue">300 fps</label>
+            </div>
+
+            <div id="LumpSettingsOuter" style="border: 1px solid black; border-radius: 2mm; margin: 2mm">
+                <div id="DisposableDiv">
+                    <table id="Table">
+                        <!--<tbody>
+                                <tr>
+                                    <td>
+                                        <p>blob</p>
+                                    </td>
+                                    <td>
+                                        <p>blub</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>bleb</p>
+                                    </td>
+                                    <td>
+                                        <p>blab</p>
+                                    </td>
+                                </tr>
+                        </tbody>-->
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <script src="Outputs/Orbit.js"></script>
+    </body>
+</html>
